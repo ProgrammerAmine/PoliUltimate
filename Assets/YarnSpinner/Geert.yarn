@@ -1,0 +1,59 @@
+title: Geert
+tags:
+position: 136,-549
+---
+<<declare $right_side = 0 as number>>
+
+Geert: Hallo, stem PVV. We vinden de Islam niet meer zo erg. *kruis vingers achter zijn rug*
+    -> Is goed. Nu dat je stopt met de Islam-haat ben ik mee. 
+    <<set $right_side = $right_side + 1>>
+    <<jump Geert2>>
+===
+title: Geert2
+position: 136,-328
+---
+    Geert: Oké, het boeit ons een klein beetje. *geeft een elleboogje*
+    -> Oké, wel een klein beetje.
+        <<set $right_side = $right_side + 1>>
+        <<jump RightResponse>>
+    -> Best, joh.
+        <<jump LeftResponse>>
+    -> Dan vind ik je toch wel stom.
+        <<set $right_side = $right_side - 1>>
+        <<jump MiddleResponse>>
+===
+title: RightResponse
+position: 135,-58
+---
+Haha, jij dombo! Ik had mijn vingers gekruist achter mijn rug. Terug naar je eigen land, kut Marokkaan.
+<<jump KickEnding>>
+===
+
+title: LeftResponse
+position: -291,-59
+---
+Ik zweer het op mijn kleine, witte hartje.
+<<jump KickEnding>>
+===
+
+title: MiddleResponse
+position: -74,-57
+---
+KOM HIER, VIEZERIK!
+<<jump KickEnding>>
+===
+
+
+ title: KickEnding
+position: -291,177
+---
+// einde geert gesprek
+Geert: Ik ben hier voor alle Nederlandurs!
+Lilguy: Zelfs de Marokkanen?
+<<if $right_side >= 2>>
+    Geert: Zelfs de Marokkanen. *maakt kruis van vingers*
+    Lilguy: ok ik doe mee.
+<<else>>
+    Rob Jetten: kick in Lilguy's gezicht en lilguy valt.
+<<endif>>
+===

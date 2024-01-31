@@ -1,0 +1,8 @@
+﻿title: Pathway
+tags:
+position: 92,-495
+---
+Er ontstaat een pad in de menigte.
+<<SetPathwayCrowdInactive PathwayTriggerZone>>
+Aan het eind zie je een podium.
+===

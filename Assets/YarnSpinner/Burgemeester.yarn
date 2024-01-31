@@ -1,0 +1,30 @@
+﻿title: Burgemeester
+position: 105,-538
+---
+    Burgemeester: Welkom.
+    <<set $Burgemeester_already_spoken = true>>
+    <<if $right_side < 0>>
+    Burgemeester: Gefeliciteerd, je bent gepolariseerd.
+    <<elseif $right_side > 0>>
+    Burgemeester: Gefeliciteerd, je bent gepolariseerd.
+    <<elseif $right_side == 0>>
+    Burgemeester: Gefeliciteerd, je bent niet gepolariseerd.
+    <<else>>
+    Burgemeester: Huh.
+    <<endif>>
+    <<jump BurgemeesterEind>>
+===
+title:BurgemeesterEind
+position: 102,-333
+---
+    <<if $right_side >= 5>>
+    Burgemeester: Probeer eens tofu.   
+    <<elseif $right_side <= -5>>
+    Burgemeester: Probeer eens een spruitje.
+    <<else>>
+    Burgemeester: Ik ben trots op je.
+    <<endif>>
+    <<FadeOut Burgemeester>>
+    <<wait 10>>
+    <<Restart Burgemeester>>
+===

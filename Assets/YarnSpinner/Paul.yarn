@@ -1,0 +1,30 @@
+﻿title: Paul
+tags:
+position: 92,-495
+---
+    <<declare $Paul_already_spoken = false >>
+    <<if $Paul_already_spoken == false>>
+    <<jump Paul1>>
+    <<else>>
+    <<jump PaulAlGesproken>>
+    <<endif>>
+===
+
+title: Paul1
+position: 368,-469
+---
+    <<set $Paul_already_spoken = true>>
+    Paul: Ben echt klaar met spruitjes in de ochtend.
+    Kees: Waarom koop je geen pannenkoeken spray zodat je spruitjes naar pannenkoeken smaken.
+    Paul: Soms gaat het er gewoon om hoe het voelt. De textuur van een spruitje is… iew.
+        
+===
+title: PaulAlGesproken
+position: 366,-618
+color: blue
+---
+    Paul: WAT IS ER?!
+    Kees: Hey take a spruitje.
+    Paul: ........
+    Kees: niet slaan.
+===

@@ -1,0 +1,59 @@
+﻿title: Janneke
+tags:
+position: -193,-12
+---
+
+<<declare $Janneke_already_spoken = false >>
+<<if $Janneke_already_spoken == false>>
+    <<jump Janneke1>>
+    <<else>>
+    <<jump JannekeAlGesproken>>
+    <<endif>>
+===
+
+title: Janneke1
+position: 98,67
+---
+<<set $Janneke_already_spoken = true>>
+<<JannekeTalking Janneke>>
+Janneke: Hier, neem deze flyer.
+Janneke geeft je een briefje met uitleg over het huidige landbouwprobleem.
+<<JannekeGive  Janneke>>
+Op het briefje staat dat spruitjes de enige groente is die tegen een bepaalde pesticide kan.
+Janneke: Dat maakt het heel goedkoop om het het te verbouwen, en worden alle andere groenten juist duur.
+Janneke: Er blijft geen onkruid meer over, wat slecht is voor de grond op de lange termijn.
+Janneke: Sterker nog, wat als er ineens een onkruid muteert wat wel tegen de bestrijding kan?
+Janneke: Dan verspreidt het als een malle omdat het geen competitie heeft, en mislukt de hele oogst!
+Janneke: Als je doneert via de code op de achterkant help je de protesten!
+-> Scan meteen de code
+    <<set $right_side = $right_side - 1>>
+    <<jump Janneke1o1>>
+-> Stop hem in je zak
+    Janneke: Fijne dag verder.
+-> Gooi de flyer weg
+    <<set $right_side = $right_side + 1>>
+    <<jump Janneke1o2>>
+===
+title: JannekeAlGesproken
+position: 105,-141
+---
+Vergeet niet te doneren!
+<<jump JannekeEnd>>
+===
+title: Janneke1o2
+position: 370,-13
+---
+Janneke: Had hem dan teruggegeven..
+<<jump JannekeEnd>>
+===
+title: Janneke1o1
+position: 375,135
+---
+Janneke: Elk beetje helpt!
+<<jump JannekeEnd>>
+===
+title: JannekeEnd
+position: 669,-103
+---
+<<JannekeStopTalking Janneke>>
+===

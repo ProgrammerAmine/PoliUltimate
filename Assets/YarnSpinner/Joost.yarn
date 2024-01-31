@@ -1,0 +1,56 @@
+title: Joost
+position: -38,-326
+---
+    <<declare $Joost_already_spoken = false>>
+    <<if $Joost_already_spoken == false>>
+    <<jump Joost1>>
+    <<else>>
+    <<jump JoostAlGesproken>>
+    <<endif>>
+===
+title: Joost1
+position: 253,-217
+---
+    <<set $Joost_already_spoken = true>>
+    Je ziet dat een politieagent zichzelf verdedigt tegen een relschoppende menigte.
+    Joost: We worden overweldigd!
+    Joost: Pak snel dit traangas en werp het naar de menigte!
+    -> Neem de traangas aan
+        Je moet nu werpen!
+        -> Werp hem over de menigte heen
+            <<set $right_side = $right_side + 1>>
+            <<jump Joost1o1>>
+        -> Geef hem terug
+            <<set $right_side = $right_side - 1>>
+            <<jump Joost1o2>>
+    -> Neem de traangas niet aan
+        <<set $right_side = $right_side - 1>>
+        <<jump Joost1o2>>
+
+===
+title: Joost1o1
+position: 542,-266
+color: yellow
+---
+    Je ziet een gaswolk ontstaan in de verte.
+    Joost: Mooi werk!
+===
+title: Joost1o2
+position: 543,-121
+color: purple
+---
+    Joost kijkt je verontwaardigd aan.
+    Joost: Dan werp ik hem zelf wel!
+    Je ziet een gaswolk ontstaan in de verte.
+    Joost: Geen dank aan jou!
+===
+title: JoostAlGesproken
+position: 256,-431
+color: blue
+---
+    <<if $right_side >= 0>>
+    Joost: Fijne dag.
+    <<else>>
+    Joost: Maak dat je wegkomt.
+    <<endif>>
+===

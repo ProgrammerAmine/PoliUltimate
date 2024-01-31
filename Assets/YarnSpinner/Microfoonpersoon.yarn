@@ -1,0 +1,68 @@
+﻿title: Microfoonpersoon
+tags:
+position: 92,-495
+---
+    <<declare $Microfoonpersoon_already_spoken = false >>
+    <<if $Microfoonpersoon_already_spoken == false>>
+    <<jump Microfoonpersoon1>>
+    <<else>>
+    <<jump MicrofoonpersoonAlGesproken>>
+    <<endif>>
+===
+
+title: Microfoonpersoon1
+position: 368,-469
+---
+    <<set $Microfoonpersoon_already_spoken = true>>
+    Microfoon Persoon: VERBOUW ANDERS NOW!
+    Microfoon Persoon: VERBOUW ANDERS NOW!!!
+    Microfoon Persoon: WE MOETEN NU VERANDEREN MET DE OOGST. 
+    Microfoon Persoon: DE GROND KAN DIT NIET MEER AAN!
+    Microfoon Persoon: DE MINERALEN DIE GEBRUIKT WORDEN VOOR DE SPRUITJES OOGST ZORGEN ALLEEN MAAR VOOR EEN SLECHTERE GROND.
+    De Microfoon Persoon kijkt jou aan.
+    Microfoon Persoon: Jij vindt toch ook dat we moeten stoppen met de oogst van spruitjes?
+    -> Ja we moeten stoppen ik ben sowieso klaar met spruitjes. Ze zijn beetje iew.
+        <<set $right_side = $right_side - 2>>
+        <<jump Microfoonpersoon1o1>>
+    -> Ik denk het misschien.
+        <<jump Microfoonpersoon1o2>>
+    -> Nee spruitjes mogen blijven.
+        <<set $right_side = $right_side + 2>>
+        <<jump Microfoonpersoon1o3>>
+        
+===
+title: Microfoonpersoon1o1
+position: 685,-378
+color: purple
+---
+    Microfoonpersoon: Zo is het! De <color=\#A900FD>Elite</color> zien de consequenties niet van het te vaak oogsten van hetzelfde.
+    Microfoonpersoon: Ze kijken niet om naar de mensen die elke dag hetzelfde eten en honderden betalen voor deze ongezonde kut sprays. 
+===
+title: Microfoonpersoon1o2
+position: 682,-526
+color: yellow
+---
+    Microfoonpersoon kijkt je teleurgesteld aan.
+    Microfoonpersoon: De <color=\#A900FD>Elite</color> willen dat je zo zweeft.
+    Microfoonpersoon: Iemand zoals jij zal vast zitten voor altijd.
+    Microfoonpersoon: Ze kijken niet om naar de mensen die elke dag hetzelfde eten en honderden betalen voor deze ongezonde kut sprays. 
+===
+title: Microfoonpersoon1o3
+position: 682,-526
+color: yellow
+---
+    Microfoonpersoon kijkt je teleurgesteld aan.
+    Microfoonpersoon: Je bent een zondebok. Nutteloos voor je medemens.
+    Microfoonpersoon: De <color=\#A900FD>Elite</color> eten je op en spugen je weer uit.
+    Microfoonpersoon: Ze kijken niet om naar de mensen die elke dag hetzelfde eten en honderden betalen voor deze ongezonde kut sprays. 
+===
+title: MicrofoonpersoonAlGesproken
+position: 366,-618
+color: blue
+---
+    <<if $right_side >= 0>>
+    Microfoonpersoon negeert je en schreeuwt door.
+    <<else>>
+    Microfoonpersoon schreeuwt weer door en geeft je een thumbs up.
+    <<endif>>
+===

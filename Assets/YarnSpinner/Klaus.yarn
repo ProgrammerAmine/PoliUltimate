@@ -1,0 +1,28 @@
+﻿title: Klaus
+tags:
+position: 92,-495
+---
+    <<declare $Klaus_already_spoken = false >>
+    <<if $Klaus_already_spoken == false>>
+    <<jump Klaus1>>
+    <<else>>
+    <<jump KlausAlGesproken>>
+    <<endif>>
+===
+
+title: Klaus1
+position: 368,-469
+---
+    <<set $Klaus_already_spoken = true>>
+    Klaus: Wist je dat de <color=\#7fff00>Elite</color> iets voor ons verstoppen.
+    Klaus: Ze zeggen dat ze de oogst willen veranderen omdat de "grond uitgeput raakt"
+    Klaus: Maar eigenlijk willen ze veranderen naar tofu.
+    Klaus: Ze willen hun <color=\#7fff00>Cultuur</color> op on forceren.
+        
+===
+title: KlausAlGesproken
+position: 366,-618
+color: blue
+---
+    Klaus: Ik denk dat de <color=\#7fff00>Elite</color> alleen aan hun zelf denken.
+===

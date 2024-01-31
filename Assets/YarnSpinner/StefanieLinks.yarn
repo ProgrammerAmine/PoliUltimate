@@ -1,0 +1,69 @@
+title: StefanieLinks
+tags:
+position: 92,-495
+---
+    <<JannekeTalking StefanieLinks>>
+    <<declare $StefanieLinks_already_spoken = false >>
+    <<if $Stefanie_already_spoken == false>>
+    <<jump StefanieLinks1>>
+    <<else>>
+    <<jump StefanieLinksAlGesproken>>
+    <<endif>>
+===
+
+title: StefanieLinks1
+position: 368,-469
+---
+    <<set $StefanieLinks_already_spoken = true>>
+    Stefanie: Kom op Jeroen! We komen te laat!
+    Jeroen: Rustig aan...
+    Jeroen: ik...
+    Jeroen: heb...
+    Jeroen: astma.
+    Stefanie: Straks staan we achteraan en dan zien we niks!
+    Jeroen: Waar... is... mijn puffer?
+    Je ziet een puffer verderop op de grond liggen.
+    -> Pak de puffer en geef hem aan Jeroen
+        <<SetLinksInhalerInactive StefanieLinks>>
+        <<jump StefanieLinks1o1>>
+    -> Negeer het en loop door.
+        <<jump StefanieLinks1o2>>
+    -> Pak de puffer en stop hem in je zak
+        <<SetLinksInhalerInactive StefanieLinks>>
+        <<jump StefanieLinks1o3>>
+
+        
+===
+title: StefanieLinks1o1
+position: 685,-378
+color: purple
+---
+    Jeroen: Dankjewel!
+    Jeroen gebruikt de puffer en neemt een enorme zucht.
+    Stefanie: Bedankt voor het vinden van de puffer.
+    <<JannekeStopTalking StefanieLinks>>
+===
+title: StefanieLinks1o2
+position: 685,-378
+color: purple
+---
+    Jeroen: Ik moet even zitten, denk ik.
+    Stefanie: We halen wel een nieuwe..
+    <<JannekeStopTalking StefanieLinks>>
+===
+title: StefanieLinks1o3
+position: 685,-378
+color: purple
+---
+    Jeroen: Ik moet... en zal... hem vinden!
+    <<JannekeStopTalking StefanieLinks>>
+===
+
+
+title: StefanieLinksAlGesproken
+position: 366,-618
+color: blue
+---
+    Stefanie: Hij raakt altijd zijn puffer kwijt.
+    <<JannekeStopTalking StefanieLinks>>
+===

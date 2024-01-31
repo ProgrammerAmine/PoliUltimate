@@ -1,0 +1,30 @@
+title: Nienke
+tags:
+position: 92,-495
+---
+    <<JannekeTalking Nienke>>
+    <<declare $Nienke_already_spoken = false >>
+    <<if $Nienke_already_spoken == false>>
+    <<jump Nienke1>>
+    <<else>>
+    <<jump NienkeAlGesproken>>
+    <<endif>>
+===
+
+title: Nienke1
+position: 368,-469
+---
+    <<set $Nienke_already_spoken = true>>
+    Nienke: Ik had net een 180 euro pannekoeken spray gekocht via een sketchy site.
+    Nienke: Blijkt hij gewoon leeg te zijn! In nieuw pak en al.
+    Nienke: Ik haat spruitjes.
+    <<JannekeStopTalking Nienke>>
+        
+===
+title: NienkeAlGesproken
+position: 366,-618
+color: blue
+---
+    Nienke: Ben blut en heb een spruitjes adem, ik haat spruitjes.
+    <<JannekeStopTalking Nienke>>
+===

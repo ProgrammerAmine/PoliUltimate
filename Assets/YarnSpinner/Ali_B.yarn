@@ -1,0 +1,14 @@
+﻿title: Ali_B
+tags:
+position: -117,-410
+---
+
+Ali B: Hey leipe mocro
+Lilguy: Ali waarom ben jij hier in marokko?
+<<if $right_side < 2>>
+    Ali B: Door jou jij klap idioot
+    Lilguy: uhhhh ok ik dacht dat ook op kwam voor de Marokkanen.
+<<else>>
+    Rob Jette: kick in Lilguy's gezicht en lilguy valt.
+<<endif>>
+===

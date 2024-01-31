@@ -1,0 +1,28 @@
+﻿title: Hugo
+tags:
+position: 92,-495
+---
+    <<declare $Hugo_already_spoken = false >>
+    <<if $Hugo_already_spoken == false>>
+    <<jump Hugo1>>
+    <<else>>
+    <<jump HugoAlGesproken>>
+    <<endif>>
+===
+
+title: Hugo1
+position: 368,-469
+---
+    <<set $Hugo_already_spoken = true>>
+    Hugo: Wist je dat er vroeger winkels bestonden met allerlei soorten voedsel in de schappen?
+    Hugo: Men kon hier naar binnen om eten te halen voor minder dan 7 euro en er dan de hele dag mee overleven!
+    Hugo: En dan bedoel ik niet 7 euro aan spruitjes! 
+    Hugo: Kijk, dit is een naamplaatje van een medewerker.
+    Je ziet een naamplaatje waar <color=\#7fff00>Plus</color> op staat.        
+===
+title: HugoAlGesproken
+position: 366,-618
+color: blue
+---
+    Hugo: Die Plus leefde in een goede tijd.
+===

@@ -1,0 +1,52 @@
+title: Ari
+tags:
+position: 92,-495
+---
+    <<declare $Ari_already_spoken = false >>
+    <<if $Ari_already_spoken == false>>
+    <<jump Ari1>>
+    <<else>>
+    <<jump AriAlGesproken>>
+    <<endif>>
+===
+
+title: Ari1
+position: 368,-469
+---
+    <<set $Ari_already_spoken = true>>
+    Ari: 7 euro 50 ..... 4 euro 20.... 5....
+    Ari: Ik denk dat dat mijn kat ook spruitjes moet eten deze week.
+    -> De prijzen zijn absurd. Je huisdier eten geven zou een basis moeten zijn.
+        <<set $right_side = $right_side - 1>>
+        <<jump Ari1o1>>
+    -> ...
+    -> Je moet harder werken.
+        <<set $right_side = $right_side + 1>>
+        <<jump Ari1o3>>
+        
+===
+title: Ari1o1
+position: 685,-378
+color: purple
+---
+    Ari: Inderdaad, het is toch niet normaal dat mijn kat spruitjes als voer moet door slikken.
+    Ari: Dit land gaat de verkeerde kant op.
+    Ari: gelukkig zijn er wat demonstratie's bezig tegen dit allemaal.
+===
+title: Ari1o3
+position: 682,-526
+color: yellow
+---
+    Ari kijkt je boos aan.
+    Ari: Misschien moet jij door lopen.
+===
+title: AriAlGesproken
+position: 366,-618
+color: blue
+---
+    <<if $right_side <= 0>>
+    Ari negeert je.
+    <<else>>
+    Ari: Denk je dat ik voer kan bestellen uit China?
+    <<endif>>
+===

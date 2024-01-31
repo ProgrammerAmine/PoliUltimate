@@ -1,0 +1,65 @@
+title: Karel
+tags:
+position: 92,-495
+---
+    <<declare $Karel_already_spoken = false >>
+    <<if $Karel_already_spoken == false>>
+    <<jump Karel1>>
+    <<else>>
+    <<jump KarelAlGesproken>>
+    <<endif>>
+===
+
+title: Karel1
+position: 368,-469
+---
+    <<set $Karel_already_spoken = true>>
+    Je ziet een protesterende man met aansteker en <color=\#7fff00>molotov-cocktail</color> in zijn hand.
+    Hij steekt de <color=\#7fff00>molotov-cocktail</color> aan en houdt hem voor zich uit.
+    Karel: Kuch kuch... Iemand met een petje heeft traangas op ons geworpen!
+    Karel: Waar wacht je op? Pak hem en gooi, voordat ze er meer werpen!
+    -> Pak de <color=\#7fff00>molotov-cocktail</color> beet
+        Je moet nu werpen!
+        -> Werp de <color=\#7fff00>molotov-cocktail</color> over de menigte heen
+            <<set $right_side = $right_side - 1>>
+            <<jump Karel1o1>>
+        -> Geef de <color=\#7fff00>molotov-cocktail</color> terug
+            <<set $right_side = $right_side + 1>>
+            <<jump Karel1o2>>
+    -> Weiger de <color=\#7fff00>molotov-cocktail</color>
+        <<set $right_side = $right_side + 1>>
+        <<jump Karel1o2>>
+        
+===
+title: Karel1o1
+position: 685,-378
+color: purple
+---
+    Karel: Daar gaat 'ie!
+    <<wait  1>>
+    <<SetMolotovActive MolotovParent>>
+    Je ziet een steekvlam opgaan in de verte.
+    Karel: Lekker bezig!
+===
+title: Karel1o2
+position: 682,-526
+color: yellow
+---
+    Karel kijkt je teleurgesteld aan.
+    Karel: Dan gooi ik de <color=\#7fff00>molotov-cocktail</color> zelf wel!
+    <<KarelThrow  Karel>>
+    <<wait  2>>
+    <<SetMolotovActive MolotovParent>>
+    Je ziet een steekvlam opgaan in de verte.
+    Karel: Zo goed had jij de <color=\#7fff00>molotov-cocktail</color> toch niet kunnen werpen!
+===
+title: KarelAlGesproken
+position: 366,-618
+color: blue
+---
+    <<if $right_side >= 0>>
+    Karel kijkt je boos aan en draait zich weer om.
+    <<else>>
+    Karel kijkt je blij aan en draait zich weer om.
+    <<endif>>
+===

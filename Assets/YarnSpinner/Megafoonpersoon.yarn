@@ -1,0 +1,70 @@
+﻿title: Megafoonpersoon
+tags:
+position: 92,-495
+---
+    <<declare $Megafoonpersoon_already_spoken = false >>
+    <<if $Megafoonpersoon_already_spoken == false>>
+    <<jump Megafoonpersoon1>>
+    <<else>>
+    <<jump MegafoonpersoonAlGesproken>>
+    <<endif>>
+===
+
+title: Megafoonpersoon1
+position: 368,-469
+---
+    <<set $Megafoonpersoon_already_spoken = true>>
+    Megafoon persoon: LAAT DE PLANTERS MET RUST!
+    Megafoon persoon: LAAT DE PLANTERS MET RUST!!
+    Megafoon persoon: ZIJ WERKEN DAG EN NACHT ALLEEN VOOR ONS!
+    Megafoon persoon: DE ECONOMIE GAAT NAAR DE KLOTE!
+    Megafoon persoon: ZONDER DE PLANTERS ZATEN WE NU IN HONGERSNOOD!
+    De Megafoonpersoon kijkt jou aan.
+    Megafoon persoon: Jij vindt toch ook dat we de planters met rust moeten gelaten worden?
+    -> Ja tuurlijk ze werken zo hard zodat wij kunnen eten. En ik heb dan wat zakgeld.
+        <<set $right_side = $right_side + 2>>
+        <<jump Megafoonpersoon1o1>>
+    -> Ik denk het misschien.
+        <<jump Megafoonpersoon1o2>>
+    -> Nee ze moeten weg.
+        <<set $right_side = $right_side - 1>>
+        <<jump Megafoonpersoon1o3>>
+        
+===
+title: Megafoonpersoon1o1
+position: 685,-378
+color: purple
+---
+Megafoonpersoon kijkt je blij aan en zijn ogen beginnen te wateren.
+    Megafoonpersoon: Zo is het! De <color=\#7fff00>Elite</color> zien de consequenties niet van de plotselingen verandering naar de economie.
+    Megafoonpersoon: Ze kijken niet om naar de mensen die al hun spaargeld in de industrie hebben gestopt.
+    Megafoonpersoon: Al hun bloed zweet en tranen. 
+===
+title: Megafoonpersoon1o2
+position: 682,-526
+color: yellow
+---
+    Megafoonpersoon kijkt je teleurgesteld aan.
+    Megafoonpersoon: De <color=\#7fff00>Elite</color> willen dat je het niet snapt.
+    Megafoonpersoon: Iemand zoals jij zal altijd onderdrukt worden.
+    Megafoonpersoon: Ze kijken niet om naar de mensen die alles verliezen omdat zij hun levenskeuzes proberen te forceren op je. 
+===
+title: Megafoonpersoon1o3
+position: 682,-526
+color: yellow
+---
+    Megafoonpersoon kijkt je aan met veracht.
+    Megafoonpersoon: Je bent een zondebok. Nutteloos voor je medemens.
+    Megafoonpersoon: De <color=\#7fff00>Elite</color> eten je op en spugen je weer uit.
+    Megafoonpersoon: Ze kijken niet om naar de mensen die alles verliezen omdat zij hun levenskeuzes proberen te forceren op je. 
+===
+title: MegafoonpersoonAlGesproken
+position: 366,-618
+color: blue
+---
+    <<if $right_side <= 0>>
+    Megafoonpersoon negeert je en schreeuwt door.
+    <<else>>
+    Megafoonpersoon schreeuwt weer door en geeft je een thubs up.
+    <<endif>>
+===

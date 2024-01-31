@@ -1,0 +1,60 @@
+title: Japie
+position: -33,-323
+---
+    <<declare $Japie_already_spoken = false>>
+    <<if $Japie_already_spoken == false>>
+    <<jump Japie1>>
+    <<else>>
+    <<jump JapieAlGesproken>>
+    <<endif>>
+===
+title: Japie1
+position: 253,-217
+---
+    <<set $Japie_already_spoken = true>>
+    Je ziet dat een politieagent zichzelf verdedigt tegen een relschoppende menigte.
+    Japie: We worden overweldigd!
+    Japie: Pak snel dit <color=\#7f00ff>traangas</color> en werp het naar de menigte!
+    -> Neem de <color=\#7f00ff>traangas</color> aan
+        Je moet nu werpen!
+        -> Werp de <color=\#7f00ff>traangas</color> over de menigte heen
+            <<set $right_side = $right_side + 1>>
+            <<jump Japie1o1>>
+        -> Geef de <color=\#7f00ff>traangas</color> terug
+            <<set $right_side = $right_side - 1>>
+            <<jump Japie1o2>>
+    -> Neem de <color=\#7f00ff>traangas</color> niet aan
+        <<set $right_side = $right_side - 1>>
+        <<jump Japie1o2>>
+
+===
+title: Japie1o1
+position: 542,-266
+color: yellow
+---
+    Je ziet een gaswolk ontstaan in de verte.
+    <<SetTeargasActive TraangasParent>>
+    Japie: Mooi werk!
+===
+title: Japie1o2
+position: 543,-121
+color: purple
+---
+    Japie kijkt je verontwaardigd aan.
+    Japie: Dan werp ik de <color=\#7f00ff>traangas</color> zelf wel!
+    <<JapieThrow Japie>>
+    <<wait 2>>
+    <<SetTeargasActive TraangasParent>>
+    Je ziet een gaswolk ontstaan in de verte.
+    Japie: Geen dank aan jou!
+===
+title: JapieAlGesproken
+position: 256,-431
+color: blue
+---
+    <<if $right_side >= 0>>
+    Japie: Fijne dag.
+    <<else>>
+    Japie: Maak dat je wegkomt.
+    <<endif>>
+===

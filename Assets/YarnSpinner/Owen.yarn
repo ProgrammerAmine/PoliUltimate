@@ -1,0 +1,54 @@
+title: Owen
+tags:
+position: 92,-495
+---
+    <<declare $Owen_already_spoken = false >>
+    <<if $Owen_already_spoken == false>>
+    <<jump Owen1>>
+    <<else>>
+    <<jump OwenAlGesproken>>
+    <<endif>>
+===
+
+title: Owen1
+position: 368,-469
+---
+    <<set $Owen_already_spoken = true>>
+    Je ziet een oude man in zijn eigen gedachtes verzonken.
+    Owen: Dit is abnormaal. de hondenbrokken worden nu tofubrokken?
+    Owen: Ik denk dat dat mijn hond tofu moet gaan eten komende week...
+    -> Dat slaat nergens op. het zijn honden! Ze moeten vitamines en ijzer binnen krijgen.
+        <<set $right_side = $right_side + 1>>
+        <<jump Owen1o1>>
+    -> ...
+        Owen blijft in zichzelf mompelen.
+    -> Jammer voor je.
+        <<set $right_side = $right_side - 1>>
+        <<jump Owen1o3>>
+        
+===
+title: Owen1o1
+position: 685,-378
+color: purple
+---
+    Owen: Inderdaad, het is toch niet normaal dat mijn hond tofu als voer door moet slikken.
+    Owen: Dit land gaat de verkeerde kant op.
+    Owen: Gelukkig zijn er wat demonstraties bezig tegen dit allemaal.
+===
+title: Owen1o3
+position: 682,-526
+color: yellow
+---
+    Owen kijkt je boos aan.
+    Owen: Misschien moet jij doorlopen!
+===
+title: OwenAlGesproken
+position: 366,-618
+color: blue
+---
+    <<if $right_side <= 0>>
+    Owen negeert je.
+    <<else>>
+    Owen: Denk je dat ik voer kan bestellen vanuit China?
+    <<endif>>
+===
